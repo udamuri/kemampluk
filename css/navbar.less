@@ -1,0 +1,93 @@
+@bgtrans        : rgba(14, 114, 0, 0.7);
+@bgDefault      : lighten(#0d6800, 2%);
+@bgHighlight    : #ebff56;
+@colDefault     : #ebff56;
+@colHighlight   : @bgDefault;
+@colLogo        : #e3523e;
+@dropDown       : false;
+.ddm() when (@dropDown) {
+  > li > .dropdown-menu {
+      background-color: @bgDefault;
+      > li {
+        > a {
+          color: @colDefault;
+          &:hover,  &:focus {
+            background-color: @bgHighlight; }}
+        > .divider {
+          background-color: @bgHighlight;}}}
+  .open .dropdown-menu > .active {
+    > a, > a:hover, > a:focus {
+      color: @colHighlight;
+      background-color: @bgHighlight; }}}
+.navbar-default {
+  // background-color: @bgDefault;
+  background-color: @bgtrans;
+  border-color: @bgDefault;
+  .border-radius(0);
+  margin-bottom: 0;
+  .navbar-brand {
+    	color: @colLogo;
+    	margin:10px 0 0 5px;
+    	padding: 0;
+    	font-weight: bold;
+    	&:hover, &:focus {
+      		color: @colHighlight; 
+    	}
+    	img {
+    		max-height: 100%;
+    	}
+    }
+  .navbar-text {
+    color: @colDefault; }
+  .navbar-nav {
+    > li {
+      padding-top: 0;
+      padding-bottom: 0;
+      > a {
+        line-height: 3em;
+        color: @colDefault;
+        font-size: 11pt;
+        &:hover,  &:focus {
+          color: @colHighlight;
+          background-color: @bgHighlight; }}}
+    .ddm;
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: @colHighlight;
+        background-color: @bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: @colHighlight;
+        background-color: @bgHighlight; }}}
+  .navbar-toggle {
+    margin-top: 15px;
+    border-color: @bgHighlight;
+    &:hover, &:focus {
+      background-color: @bgDefault; }
+    .icon-bar {
+      background-color: @colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: @colDefault; }
+  .navbar-link {
+    color: @colDefault;
+    &:hover {
+      color: @colHighlight; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: @colDefault;
+      &:hover, &:focus {
+        color: @colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: @colHighlight;
+        background-color: @bgHighlight; }}}
+}
+
+.border-radius(@radius: 0.3em)
+{
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
