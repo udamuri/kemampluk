@@ -27,16 +27,15 @@
   .border-radius(0);
   margin-bottom: 0;
   .navbar-brand {
-    	color: @colLogo;
-    	margin:10px 0 0 5px;
-    	padding: 0;
-    	font-weight: bold;
-    	&:hover, &:focus {
-      		color: @colHighlight; 
-    	}
-    	img {
-    		max-height: 100%;
-    	}
+      transform: translateX(-50%);
+      left: 50%;
+      position: absolute;
+      height: 100%;
+
+      input {
+        width: 100%;
+        height: 100%;
+      }
     }
   .navbar-text {
     color: @colDefault; }
@@ -84,6 +83,10 @@
       > a, > a:hover, > a:focus {
         color: @colHighlight;
         background-color: @bgHighlight; }}}
+
+  .navbar-brand {
+      max-height: 60px;
+  }
 }
 
 .border-radius(@radius: 0.3em)
