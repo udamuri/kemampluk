@@ -9,23 +9,24 @@ body {
 .top-navbar
 {
 	min-height: 40px;
-    background-color: @green1;
-  	background-image: -webkit-linear-gradient( -28deg, @green1 0%, @green1 50%, @green2 50%, @green2 50%);
-  	background-image: -o-linear-gradient( -28deg, @green1 0%, @green1 50%, @green2 50%, @green2 50%);
-  	background-image: -moz-linear-gradient( -28deg, @green1 0%, @green1 50%, @green2 50%, @green2 50%);
-  	background-image: linear-gradient( -28deg, @green1 0%, @green1 50%, @green2 50%, @green2 50%);
+  	.linear-gradient-deg(-28deg, @green1, @green2, 50%);
 }
 
 .title-navbar
 {
 	min-height: 60px;
-    background-color: @green2;
-  	background-image: -webkit-linear-gradient( -28deg, @green2 0%, @green2 60%, @green1 60%, @green1 60%);
-  	background-image: -o-linear-gradient( -28deg, @green2 0%, @green2 60%, @green1 60%, @green1 60%);
-  	background-image: -moz-linear-gradient( -28deg, @green2 0%, @green2 60%, @green1 60%, @green1 60%);
-  	background-image: linear-gradient( -28deg, @green2 0%, @green2 60%, @green1 60%, @green1 60%);
+  	.linear-gradient-deg(-28deg, @green2, @green1, 60%);
 
   	h2 {
   		color: @white;
   	}
+}
+
+.linear-gradient-deg(@deg: -28deg, @c1:@green1, @c2:@green2, @percent: 50%)
+{
+	background-color: @c1;
+  	background-image: -webkit-linear-gradient( @deg, @c1 0%, @c1 @percent, @c2 @percent, @c2 @percent);
+  	background-image: -o-linear-gradient( @deg, @c1 0%, @c1 @percent, @c2 @percent, @c2 @percent);
+  	background-image: -moz-linear-gradient( @deg, @c1 0%, @c1 @percent, @c2 @percent, @c2 @percent);
+  	background-image: linear-gradient( @deg, @c1 0%, @c1 @percent, @c2 @percent, @c2 @percent);
 }
